@@ -1,15 +1,18 @@
 <template>
   <div id="app-root">
+
+    <!-- This block will output parsed markdown -->
     <main>
-      <p class="meta">This content will be rendered:</p>
+      <div class="meta">CONTENT:</div>
       <Content/>
     </main>
-    <aside>
-      <p class="meta">This content will not:</p>
-      <article v-for="page in this.$site.pages">
-        <div>{{ page.title }}</div>
-        <div>{{ page.excerpt }}</div>
-      </article>
+
+    <!-- This block will output markdown-format plain text -->
+    <aside v-for="page in this.$site.pages">
+      <div class="meta">TITLE:</div>
+      <div>{{ page.title }}</div>
+      <div class="meta">EXCERPT:</div>
+      <div>{{ page.excerpt }}</div>
     </aside>
   </div>
 </template>
